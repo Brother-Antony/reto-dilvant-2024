@@ -61,47 +61,77 @@
             <div class="container">
                 <a href="/" class="header__logo">Dilvant</a>
                 <div class="header__navigation">
-                    <ul class="header__nav">
-                        <div class="header__nav--title">MENÚ</div>
-                        <li><a href="/" class="header__nav--link active">
-                            <div class="header__nav--icon">
-                                <svg width="32px" height="24px" viewBox="0 0 256 256"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"><path d="M151.99414,207.99263v-48.001a8,8,0,0,0-8-8h-32a8,8,0,0,0-8,8v48.001a8,8,0,0,1-7.999,8l-47.99414.00632a8,8,0,0,1-8.001-8v-92.4604a8,8,0,0,1,2.61811-5.91906l79.9945-72.73477a8,8,0,0,1,10.76339-.00036l80.0055,72.73509A8,8,0,0,1,216,115.53887V207.999a8,8,0,0,1-8.001,8l-48.00586-.00632A8,8,0,0,1,151.99414,207.99263Z"></path></g></svg>
-                            </div>
-                            <div class="header__nav--text">Inicio</div>
-                        </a></li>
-                        <li><a href="/" class="header__nav--link">
-                            <div class="header__nav--icon">
-                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22px" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm5 2h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4h-4V5zM3 20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6zm2-5h4v4H5v-4zm8 5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6zm2-5h4v4h-4v-4z"></path></svg>
-                            </div>
-                            <div class="header__nav--text">Menú</div>
-                        </a></li>
-                        <li><a href="/" class="header__nav--link">
-                            <div class="header__nav--icon">
-                                <svg width="32px" height="32px" viewBox="0 0 96.000000 96.000000">
-                                    <g transform="translate(-4151.642 -3582)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
-                                        <g transform="translate(4179 3590)" class="path">
-                                            <circle cx="20" cy="20" r="20" stroke="none"></circle>
-                                            <circle cx="20" cy="20" r="17" fill="none"></circle>
+                    <div class="header__navigation--overlay">
+                        <button type="button" class="close-dropdown" id="close-dropdown">
+                            <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; transform: rotate(90deg);"><path d="M7.07101 5.814L12.021 0.864004C12.1133 0.768494 12.2236 0.692312 12.3456 0.639903C12.4676 0.587494 12.5988 0.559907 12.7316 0.558754C12.8644 0.5576 12.9961 0.582901 13.119 0.633182C13.2419 0.683463 13.3535 0.757716 13.4474 0.851609C13.5413 0.945502 13.6155 1.05715 13.6658 1.18005C13.7161 1.30295 13.7414 1.43463 13.7403 1.56741C13.7391 1.70018 13.7115 1.8314 13.6591 1.95341C13.6067 2.07541 13.5305 2.18576 13.435 2.278L7.77801 7.935C7.59048 8.12247 7.33617 8.22779 7.07101 8.22779C6.80584 8.22779 6.55153 8.12247 6.36401 7.935L0.707006 2.278C0.611496 2.18576 0.535314 2.07541 0.482905 1.95341C0.430496 1.8314 0.40291 1.70018 0.401756 1.56741C0.400602 1.43463 0.425904 1.30295 0.476185 1.18005C0.526466 1.05715 0.600719 0.945502 0.694611 0.851609C0.788504 0.757716 0.900156 0.683463 1.02305 0.633182C1.14595 0.582901 1.27763 0.5576 1.41041 0.558754C1.54319 0.559907 1.67441 0.587494 1.79641 0.639903C1.91841 0.692312 2.02876 0.768494 2.12101 0.864004L7.07101 5.814Z" fill="currentColor"/></svg>
+                        </button>
+                        <button type="button" class="ham-burger" id="ham-burger"><span></span></button>
+                    </div>
+                    <div class="header__navigation--menu">
+                        <ul class="header__nav">
+                            <div class="header__nav--title">Menú</div>
+                            <div class="header__nav--description">Explora</div>
+                            <li><a href="/" class="header__nav--link active">
+                                <div class="header__nav--icon">
+                                    <svg width="32px" height="24px" viewBox="0 0 256 256"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"><path d="M151.99414,207.99263v-48.001a8,8,0,0,0-8-8h-32a8,8,0,0,0-8,8v48.001a8,8,0,0,1-7.999,8l-47.99414.00632a8,8,0,0,1-8.001-8v-92.4604a8,8,0,0,1,2.61811-5.91906l79.9945-72.73477a8,8,0,0,1,10.76339-.00036l80.0055,72.73509A8,8,0,0,1,216,115.53887V207.999a8,8,0,0,1-8.001,8l-48.00586-.00632A8,8,0,0,1,151.99414,207.99263Z"></path></g></svg>
+                                </div>
+                                <div class="header__nav--text">Inicio</div>
+                            </a></li>
+                            <li><a href="/" class="header__nav--link">
+                                <div class="header__nav--icon">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="22px" width="22px" xmlns="http://www.w3.org/2000/svg"><path d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm5 2h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm1-6h4v4h-4V5zM3 20a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6zm2-5h4v4H5v-4zm8 5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6zm2-5h4v4h-4v-4z"></path></svg>
+                                </div>
+                                <div class="header__nav--text">Menú</div>
+                            </a></li>
+                            <li><a href="/" class="header__nav--link">
+                                <div class="header__nav--icon">
+                                    <svg width="32px" height="32px" viewBox="0 0 96.000000 96.000000">
+                                        <g transform="translate(-4151.642 -3582)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+                                            <g transform="translate(4179 3590)" class="path">
+                                                <circle cx="20" cy="20" r="20" stroke="none"></circle>
+                                                <circle cx="20" cy="20" r="17" fill="none"></circle>
+                                            </g>
+                                            <path d="M4173.767,3640.54c5.354.1,43.124.018,49.726,0s11.337,26.282-24.9,26.054S4168.414,3640.441,4173.767,3640.54Z" transform="translate(-0.037 0.403)"></path>
                                         </g>
-                                        <path d="M4173.767,3640.54c5.354.1,43.124.018,49.726,0s11.337,26.282-24.9,26.054S4168.414,3640.441,4173.767,3640.54Z" transform="translate(-0.037 0.403)"></path>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="header__nav--text">Nosotros</div>
-                        </a></li>
-                        <li><button type="button" class="header__nav--link">
-                            <div class="header__nav--text">Reservas</div>
-                            <div class="header__nav--chevron">
-                                <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.07101 5.814L12.021 0.864004C12.1133 0.768494 12.2236 0.692312 12.3456 0.639903C12.4676 0.587494 12.5988 0.559907 12.7316 0.558754C12.8644 0.5576 12.9961 0.582901 13.119 0.633182C13.2419 0.683463 13.3535 0.757716 13.4474 0.851609C13.5413 0.945502 13.6155 1.05715 13.6658 1.18005C13.7161 1.30295 13.7414 1.43463 13.7403 1.56741C13.7391 1.70018 13.7115 1.8314 13.6591 1.95341C13.6067 2.07541 13.5305 2.18576 13.435 2.278L7.77801 7.935C7.59048 8.12247 7.33617 8.22779 7.07101 8.22779C6.80584 8.22779 6.55153 8.12247 6.36401 7.935L0.707006 2.278C0.611496 2.18576 0.535314 2.07541 0.482905 1.95341C0.430496 1.8314 0.40291 1.70018 0.401756 1.56741C0.400602 1.43463 0.425904 1.30295 0.476185 1.18005C0.526466 1.05715 0.600719 0.945502 0.694611 0.851609C0.788504 0.757716 0.900156 0.683463 1.02305 0.633182C1.14595 0.582901 1.27763 0.5576 1.41041 0.558754C1.54319 0.559907 1.67441 0.587494 1.79641 0.639903C1.91841 0.692312 2.02876 0.768494 2.12101 0.864004L7.07101 5.814Z" fill="currentColor"/></svg>
-                            </div>
-                        </button></li>
-                    </ul>
-                    <div class="header__navigation--button">
-                        <a href="/" target="_blank" class="button">Contacto</a>
+                                    </svg>
+                                </div>
+                                <div class="header__nav--text">Nosotros</div>
+                            </a></li>
+                            <li>
+                                <button type="button" class="header__nav--link dropdown-toggle">
+                                    <div class="header__nav--icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; height: 22px; width: 22px; fill: currentcolor;"><path d="M26 6h-4V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v2H6a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h20a5 5 0 0 0 5-5V11a5 5 0 0 0-5-5zM12 4h8v2h-8zM6 28a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3h4v20zm6 0V8h8v20zm17-3a3 3 0 0 1-3 3h-4V8h4a3 3 0 0 1 3 3z"></path></svg>
+                                    </div>
+                                    <div class="header__nav--text">Reservas</div>
+                                    <div class="header__nav--chevron">
+                                        <svg width="14" height="9" viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.07101 5.814L12.021 0.864004C12.1133 0.768494 12.2236 0.692312 12.3456 0.639903C12.4676 0.587494 12.5988 0.559907 12.7316 0.558754C12.8644 0.5576 12.9961 0.582901 13.119 0.633182C13.2419 0.683463 13.3535 0.757716 13.4474 0.851609C13.5413 0.945502 13.6155 1.05715 13.6658 1.18005C13.7161 1.30295 13.7414 1.43463 13.7403 1.56741C13.7391 1.70018 13.7115 1.8314 13.6591 1.95341C13.6067 2.07541 13.5305 2.18576 13.435 2.278L7.77801 7.935C7.59048 8.12247 7.33617 8.22779 7.07101 8.22779C6.80584 8.22779 6.55153 8.12247 6.36401 7.935L0.707006 2.278C0.611496 2.18576 0.535314 2.07541 0.482905 1.95341C0.430496 1.8314 0.40291 1.70018 0.401756 1.56741C0.400602 1.43463 0.425904 1.30295 0.476185 1.18005C0.526466 1.05715 0.600719 0.945502 0.694611 0.851609C0.788504 0.757716 0.900156 0.683463 1.02305 0.633182C1.14595 0.582901 1.27763 0.5576 1.41041 0.558754C1.54319 0.559907 1.67441 0.587494 1.79641 0.639903C1.91841 0.692312 2.02876 0.768494 2.12101 0.864004L7.07101 5.814Z" fill="currentColor"/></svg>
+                                    </div>
+                                </button>
+                                <div class="dropdown__menu">
+                                    <a href="#" class="dropdown__menu--link">
+                                        <div class="dropdown__menu--icon"></div>
+                                        <div class="dropdown__menu--content">
+                                            <div class="dropdown__menu--text">Titulo</div>
+                                            <div class="dropdown__menu--description">Descripcion</div>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="dropdown__menu--link">
+                                        <div class="dropdown__menu--icon"></div>
+                                        <div class="dropdown__menu--content">
+                                            <div class="dropdown__menu--text">Titulo</div>
+                                            <div class="dropdown__menu--description">Descripcion</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                            <div class="body-blur" id="body-blur"></div>
+                        </ul>
+                        <div class="header__navigation--button">
+                            <a href="/" target="_blank" class="button">Contacto</a>
+                        </div>
                     </div>
                 </div>
                 <a href="/" target="_blank" class="header__button button">Contacto</a>
-                <button type="button" class="ham-burger" id="ham-burger"><span></span></button>
             </div>
         </header>
 

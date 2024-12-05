@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     handleHamburgerClick()
     progreBar()
     copyrightYear()
+    dropdownMenu()
 })
 
 async function renderRecipes() {
@@ -38,17 +39,27 @@ async function renderRecipes() {
 }
 
 function handleHamburgerClick() {
-    let hamBurger = document.getElementById('ham-burger')
-    let header = document.querySelector('.header')
+    const hamBurger = document.getElementById('ham-burger')
+    const header = document.querySelector('.header')
+    const dropdownMenu = document.querySelector('.dropdown__menu')
+    const bodyBlur = document.getElementById('body-blur')
+    const chevron = document.querySelector('.header__nav--chevron')
+    const closeDropdown = document.getElementById('close-dropdown')
     
     hamBurger.addEventListener('click', function() {
         header.classList.toggle('menu')
         this.classList.toggle('open')
 
         if (header.classList.contains('menu')) {
-            document.body.style.overflow = 'hidden'
+            document.body.classList.add('menu-overflow-hidden')
         } else {
-            document.body.style.overflow = 'auto'
+            document.body.classList.remove("menu-overflow-hidden")
+            dropdownMenu.classList.remove('show')
+            chevron.classList.remove('rotate')
+            bodyBlur.classList.remove('show')
+            closeDropdown.classList.remove('active')
+            header.classList.remove('prev')
+            document.body.style.overflow = ''
         }
     })
 }
@@ -75,4 +86,48 @@ function progreBar() {
             document.getElementById('loading').remove()
         }
     }, 300)
+}
+
+function dropdownMenu() {
+    const header = document.querySelector('.header')
+    const dropdownToggle = document.querySelectorAll('.dropdown-toggle')
+    const closeDropdown = document.getElementById('close-dropdown')
+    const dropdownMenu = document.querySelector('.dropdown__menu')
+    const bodyBlur = document.getElementById('body-blur')
+    const chevron = document.querySelector('.header__nav--chevron')
+
+    dropdownToggle.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            dropdownMenu.classList.toggle('show')
+            chevron.classList.toggle('rotate')
+            closeDropdown.classList.toggle('active')
+            header.classList.toggle('prev')
+
+            if (dropdownMenu.classList.contains('show')) {
+                bodyBlur.classList.add('show')
+                document.body.style.overflow = 'hidden'
+            } else {
+                bodyBlur.classList.remove('show')
+                document.body.style.overflow = ''
+            }
+        })
+    })
+
+    bodyBlur.addEventListener('click', () => {
+        dropdownMenu.classList.remove('show')
+        chevron.classList.remove('rotate')
+        bodyBlur.classList.remove('show')
+        closeDropdown.classList.remove('active')
+        header.classList.remove('prev')
+        document.body.style.overflow = ''
+    })
+
+    closeDropdown.addEventListener('click', () => {
+        dropdownMenu.classList.remove('show')
+        chevron.classList.remove('rotate')
+        bodyBlur.classList.remove('show')
+        closeDropdown.classList.remove('active')
+        header.classList.remove('prev')
+        document.body.style.overflow = ''
+    })
 }
