@@ -1,0 +1,917 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --font-reboto: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-reboto);
+    -webkit-font-smoothing: antialiased;
+}
+
+a, a:visited, a:active {
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+button, .button {
+    cursor: pointer;
+    outline: none;
+    border-style: none;
+    background: none;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 24px;
+    max-width: 1360px;
+    z-index: 10;
+}
+
+.hide-for-mobile {
+    display: none !important;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 12px 28px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    background-color: #D4A206;
+    letter-spacing: .5px;
+    white-space: nowrap;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+
+.button.lg {
+    font-weight: 700;
+    padding: 20px 48px;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.button.underline {
+    box-shadow: 0 0 0 2px inset #D4A206;
+    background-color: transparent;
+    color: #D4A206;
+}
+
+.button:hover {
+    background-color: #bb8e08;
+}
+
+.button.underline:hover {
+    background-color: #D4A206;
+    color: #fff;
+}
+
+.button:active {
+    transform: scale(.96);
+}
+
+.reservation__title,
+.experience__title,
+.seasonal-dish__title {
+    font-weight: 800;
+    font-size: 40px;
+    color: #fff;
+    line-height: 44px;
+}
+
+.seasonal-dish__content,
+.experience__content {
+    text-align: center;
+    flex: 1 1 0;
+}
+
+
+/* -------------- Section Recipes -------------- */
+.header {
+    position: sticky;
+    top: 0;
+    background-color: #001405;
+    z-index: 10;
+}
+
+.header .container {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo,
+.header.menu .header__logo {
+    font-weight: 800;
+    font-size: 24px;
+    color: #fff;
+}
+
+.header__navigation {
+    display: none;
+}
+
+.header .header__navigation--button {
+    display: none;
+    padding: 20px 24px;
+    border-top: 1px solid #334155;
+}
+
+.header .header__navigation--button .button {
+    width: 100%;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.header__nav--title {
+    margin: 12px 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 1rem;
+    color: #fff;
+}
+
+.header__nav--link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 12px 0;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    color: #fff;
+}
+
+.header__nav--link.active {
+    border-bottom: 3px solid #fff;
+}
+
+.header__nav--icon {
+    display: none;
+    place-items: center;
+    width: 24px;
+    margin-right: 8px;
+}
+
+.header__nav--icon svg {
+    width: 26px;
+}
+
+.header__nav--chevron {
+    margin-left: 13.4px;
+}
+
+.header .ham-burger {
+    display: flex;
+}
+
+.header.menu {
+    background-color: transparent;
+}
+
+.header.menu .header__navigation {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding-top: 64px;
+    background-color: #001405e9;
+    backdrop-filter: blur(26px);
+    inset: 0;
+    z-index: -1;
+}
+
+.header.menu .header__nav {
+    flex: 1 1 0;
+    border-top: 1px solid #334155;
+    overflow: auto;
+    padding: 24px 24px 40px;
+    display: block;
+}
+
+.header.menu .header__navigation--button {
+    display: block;
+}
+
+.header.menu .header__nav--title {
+    display: block;
+}
+
+.header.menu .header__nav--link {
+    padding: 8px 0;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.header.menu .header__nav--link:hover {
+    background-color: #ffffff2d;
+}
+
+.header.menu .header__nav--link.active {
+    border-bottom: none;
+}
+
+.header.menu .header__nav--link:active {
+    background-color: transparent;
+}
+
+.header.menu .header__nav--icon {
+    display: grid;
+}
+
+.header.menu .header__nav--chevron {
+    margin-left: auto;
+}
+
+.header.menu .header__nav--text {
+    line-height: normal;
+}
+
+.header.menu .ham-burger {
+    display: flex;
+}
+
+
+/* -------------- Section Hero -------------- */
+.hero {
+    padding: 24px 0 12px;
+    background-image: url('./img/shape-home.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.hero__content {
+    flex: 1 1 0;
+    text-align: center;
+}
+
+.hero__title {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 54.6px;
+    color: #fff;
+}
+
+.hero__description {
+    margin-top: 24px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34.4px;
+    color: #fff;
+}
+
+.hero .hero__button {
+    margin-top: 24px;
+    padding: 16px 44px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.hero__image {
+    margin-top: 40px;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero__image img {
+    object-fit: cover;
+    background-color: #fff;
+    width: 100%;
+    border-radius: 16px;
+}
+
+
+/* -------------- Section Recipes -------------- */
+.recipes {
+    padding: 80px 0;
+}
+
+.recipes__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 32px;
+    row-gap: 10px;
+    flex-wrap: wrap;
+}
+
+.recipes__title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 38px;
+    color: #0F172A;
+}
+
+.recipes__link {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: .5px;
+    color: #D4A206;
+}
+
+.recipes__link:hover {
+    text-decoration: underline;
+}
+
+.recipes__link:active {
+    color: #dfc26a;
+}
+
+.recipes__list {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 24px;
+}
+
+.recipes__item {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 354px;
+    background-color: #f1f1f1;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: transform .3s ease, filter .3s ease, box-shadow .3s ease;
+}
+
+.recipes__item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0));
+    pointer-events: none;
+}
+
+.recipes__item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.recipes__item:nth-child(1)::before {
+    background-image: url(./img/postre-peruano.png);
+}
+
+.recipes__item:nth-child(2)::before {
+    background-image: url(./img/plato-de-causa.png);
+}
+
+.recipes__item:nth-child(3)::before {
+    background-image: url(./img/plato-de-lomo-saltado.png);
+}
+
+.recipes__item:nth-child(4)::before {
+    background-image: url(./img/pisco-sour.png);
+}
+
+.recipes__item:nth-child(5)::before {
+    background-image: url(./img/plato-de-ceviche.png);
+}
+
+.recipes__item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipes__item:hover::before {
+    transform: scale(1.2) rotate(5deg);
+    filter: brightness(1.2)
+}
+
+.recipes__item--title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22.4px;
+    color: #fff;
+    z-index: 1;
+}
+
+
+/* -------------- Section Seasonal Dish -------------- */
+.seasonal-dish {
+    padding: 80px 0;
+    background-color: #001405;
+}
+
+.seasonal-dish__description {
+    margin-top: 28px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 34px;
+    color: #fff;
+}
+
+.seasonal-dish__image {
+    margin-top: 40px;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.seasonal-dish__image img {
+    object-fit: cover;
+    background-color: #fff;
+    border-radius: 16px;
+    width: 100%;
+}
+
+
+/* -------------- Section Experience -------------- */
+.process {
+    padding: 80px 0;
+}
+
+.process__title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 45.6px;
+    color: #001405;
+}
+
+.process__steps {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 40px;
+}
+
+.process__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 0 0 4px inset #001405;
+    border-radius: 10px;
+    padding: 32px;
+    transition: background-color .3s ease-in-out;
+}
+
+.process__step:hover {
+    background-color: #001405;
+}
+
+.process__step:hover .process__description {
+    color: #fff;
+}
+
+.process__image {
+    width: 64px;
+    min-width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.process__description {
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 34px;
+    color: #001405;
+    transition: color .3s ease-in-out;
+}
+
+
+/* -------------- Section Experience -------------- */
+.experience {
+    background-color: #6D0101;
+    padding: 80px 0;
+}
+
+.experience__description {
+    margin-top: 28px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+}
+
+.experience__image {
+    margin-top: 40px;
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.experience__image img {
+    object-fit: cover;
+    background-color: #fff;
+    border-radius: 16px;
+    width: 100%;
+}
+
+
+/* -------------- Section Reservation -------------- */
+.reservation {
+    padding: 100px 0 80px;
+    background-image: url('./img/shape-reserva.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.reservation__image {
+    flex: 1 1 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reservation__image img {
+    object-fit: cover;
+    background-color: #fff;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.reservation__content {
+    flex: 1 1 0;
+    margin-top: 40px;
+}
+
+.reservation__description {
+    margin-top: 28px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #fff;
+}
+
+.reservation .reservation__button {
+    margin-top: 32px;
+    padding: 16px 44px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+
+/* -------------- Footer -------------- */
+.footer {
+    margin-top: auto;
+    background-color: #001405;
+}
+
+.footer__sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 48px;
+    padding: 48px 0 60px;
+}
+
+.footer__section,
+.footer__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.footer__logo {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 35.2px;
+    color: #fff;
+}
+
+.footer__section--stars,
+.footer__section--contact,
+.footer__section--location {
+    padding-top: 12px;
+}
+
+.footer_title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 17.6px;
+    color: #fff;
+}
+
+.footer__text,
+.footer__link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    color: #E2E8F0;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.footer__link:active {
+    color: #fff;
+}
+
+.footer__credits {
+    border-top: 1px solid #334155;
+    text-align: center;
+    padding: 24px 0;
+}
+
+
+/* ---- Hamburguer ---- */
+.ham-burger {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    font-size: 0;
+    appearance: none;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgb(255, 255, 255, .85);
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .3s;
+}
+
+.ham-burger:active {
+    transform: scale(.92);
+}
+
+.ham-burger.open {
+    background-color: rgb(255, 255, 255, .20) !important;
+    border: 2px solid #fff !important;
+}
+
+.ham-burger.open span {
+    background: none;
+    height: 2px;
+}
+
+.ham-burger span {
+    display: block;
+    width: 16px;
+    position: absolute;
+    height: 1px;
+    transition: background 0s .3s;
+}
+
+.ham-burger.open span:before, .ham-burger.open span:after {
+    transition-delay: 0s, .3s;
+    background-color: #fff !important;
+}
+
+.ham-burger span:before, .ham-burger span:after {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-color: rgb(255, 255, 255, .70);
+    content: "";
+    transition-duration: .3s, .3s;
+    transition-delay: .3s, 0s;
+}
+
+.ham-burger span:before {
+    top: -4px;
+    transition-property: top, transform;
+}
+
+.ham-burger.open span:before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.ham-burger span:after {
+    bottom: -4px;
+    transition-property: bottom, transform;
+}
+
+.ham-burger.open span:after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+
+/* -------------- Responsive -------------- */
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .hide-for-mobile {
+        display: block !important;
+    }
+
+    .hide-for-desktop {
+        display: none !important;
+    }
+
+    .header .ham-burger {
+        display: none;
+    }
+
+    .header .container {
+        height: 80px;
+    }
+
+    .header__logo {
+        font-size: 48px;
+        line-height: 52.8px;
+    }
+
+    .header__navigation {
+        display: block;
+    }
+
+    .header__nav--title {
+        display: none;
+    }
+
+    .header.menu .header__nav {
+        padding: 24px 40px;
+    }
+
+    .header.menu .header__navigation {
+        padding-top: 80px;
+    }
+
+    .header.menu .hide-for-mobile {
+        display: none !important;
+    }
+
+    .hero__content,
+    .seasonal-dish__content,
+    .experience__content {
+        text-align: left;
+    }
+
+    .hero .hero__button,
+    .reservation .reservation__button {
+        padding: 20px 48px;
+        font-size: 24px;
+        line-height: 24px;
+    }
+
+    .hero .container,
+    .reservation .container,
+    .experience .container,
+    .seasonal-dish .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 80px;
+    }
+
+    .reservation {
+        padding: 160px 0;
+    }
+
+    .reservation__image img {
+        border-radius: 64px;
+        width: 600px;
+        height: 488px;
+    }
+
+    .reservation__content {
+        margin-top: 0;
+    }
+
+    .reservation__title,
+    .experience__title,
+    .seasonal-dish__title {
+        font-size: 56px;
+        line-height: 61.6px;
+    }
+
+    .reservation__description {
+        margin-top: 32px;
+        font-size: 24px;
+        line-height: 38.4px;
+    }
+
+    .experience__description {
+        margin-top: 32px;
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .experience__image {
+        margin-top: 0;
+    }
+
+    .experience__image img {
+        border-radius: 50px;
+        width: 436px;
+        height: 575px;
+    }
+
+    .process__title,
+    .hero__title {
+        font-size: 56px;
+        line-height: 61.6px;
+    }
+
+    .process__steps {
+        margin-top: 80px;
+        gap: 80px;
+    }
+
+    .process__step {
+        box-shadow: 0 0 0 5px inset #001405;
+    }
+
+    .process__description {
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    .seasonal-dish__description {
+        margin-top: 32px;
+        font-size: 20px;
+        line-height: 36px;
+    }
+
+    .seasonal-dish__image img {
+        width: 553px;
+        height: 347px;
+        border-radius: 63px;
+    }
+
+    .recipes__title {
+        font-size: 40px;
+        line-height: 44px;
+    }
+
+    .recipes__item--title {
+        font-size: 24px;
+        line-height: 26.4px;
+    }
+
+    .hero {
+        padding: 59px 0 80px;
+    }
+
+    .hero__description {
+        margin-top: 32px;
+        font-size: 24px;
+        line-height: 38.4px;
+    }
+
+    .hero__button {
+        text-align: left;
+        margin-top: 32px;
+    }
+
+    .hero__image {
+        margin-top: 0;
+    }
+
+    .hero__image img {
+        width: 566px;
+        height: 460px;
+        border-radius: 62px;
+    }
+}
