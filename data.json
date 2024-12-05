@@ -1,0 +1,29 @@
+{
+    "recetas": [
+        {
+            "title": "Postres Peruanos",
+            "image": "./img/postre-peruano.png",
+            "href": "/"
+        },
+        {
+            "title": "Causa Rellena",
+            "image": "./img/plato-de-causa.png",
+            "href": "/"
+        },
+        {
+            "title": "Aji de Gallina",
+            "image": "./img/plato-de-lomo-saltado.png",
+            "href": "/"
+        },
+        {
+            "title": "Pisco Sour",
+            "image": "./img/pisco-sour.png",
+            "href": "/"
+        },
+        {
+            "title": "Ceviche",
+            "image": "./img/plato-de-ceviche.png",
+            "href": "/"
+        }
+    ]
+}

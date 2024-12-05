@@ -126,6 +126,11 @@ body {
     justify-content: space-between;
 }
 
+.header__button,
+.header.menu .header__button {
+    display: none;
+}
+
 .header__logo,
 .header.menu .header__logo {
     font-weight: 800;
@@ -163,19 +168,28 @@ body {
 }
 
 .header__nav--link {
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     font-weight: 500;
-    padding: 12px 0;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: .5px;
     color: #fff;
 }
 
-.header__nav--link.active {
-    border-bottom: 3px solid #fff;
+.header__nav--link.active::before {
+    display: none;
+    content: "";
+    pointer-events: none;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
 }
 
 .header__nav--icon {
@@ -234,12 +248,17 @@ body {
     font-size: 14px;
 }
 
+
 .header.menu .header__nav--link:hover {
     background-color: #ffffff2d;
 }
 
 .header.menu .header__nav--link.active {
     border-bottom: none;
+}
+
+.header.menu .header__nav--link.active::before {
+    display: none;
 }
 
 .header.menu .header__nav--link:active {
@@ -280,7 +299,7 @@ body {
 .hero__title {
     font-weight: 800;
     font-size: 40px;
-    line-height: 54.6px;
+    line-height: 44.6px;
     color: #fff;
 }
 
@@ -383,43 +402,20 @@ body {
     pointer-events: none;
 }
 
-.recipes__item::before {
-    content: '';
+.recipes__item--image {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: cover;
     transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-.recipes__item:nth-child(1)::before {
-    background-image: url(./img/postre-peruano.png);
-}
-
-.recipes__item:nth-child(2)::before {
-    background-image: url(./img/plato-de-causa.png);
-}
-
-.recipes__item:nth-child(3)::before {
-    background-image: url(./img/plato-de-lomo-saltado.png);
-}
-
-.recipes__item:nth-child(4)::before {
-    background-image: url(./img/pisco-sour.png);
-}
-
-.recipes__item:nth-child(5)::before {
-    background-image: url(./img/plato-de-ceviche.png);
 }
 
 .recipes__item:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.recipes__item:hover::before {
+.recipes__item:hover .recipes__item--image {
     transform: scale(1.2) rotate(5deg);
     filter: brightness(1.2)
 }
@@ -735,8 +731,112 @@ body {
 }
 
 
+/* ---- Loading ---- */
+#loading {
+    position: fixed;
+    padding: 5rem 43px 3rem;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(0,0,0,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#loading .container {
+    width: 100%;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#loading .logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+  
+#loading .logo .one {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 300px;
+    filter: blur(80px);
+    transform: translate(-50%, -50%);
+    opacity: .6;
+}
+
+#loading .logo .two {
+    position: relative;
+    width: 200px;
+}
+
+#loading .block-loading-barra {
+    margin-top: 7rem;
+}
+
+#loading .block-loading-barra .textCopy {
+    max-width: 180px;
+    margin: 6rem auto 0;
+    font-size: 12px;
+    line-height: 20px;
+    color: white;
+    text-align: center;
+}
+
+#loading .block-loading-barra .textCopy a {
+    color: inherit;
+    font-weight: bold;
+}
+
+#loading .block-loading-barra .textCopy a:hover {
+    text-decoration: underline;
+}
+
+#loading .block-loading-barra .textCopy a:active {
+    color: #D4A206;
+}
+
+.barra-loading {
+    width: 100%;
+    height: 14px;
+    background-color: #232424;
+    box-shadow: 0 0 0 1px inset #292a29;
+    border-radius: 100px;
+}
+
+.barra-loading div {
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,158,158,1) 17%, rgba(255,0,0,1) 30%, rgba(255,115,0,1) 44%, rgba(255,252,0,1) 65%, rgba(146,255,0,1) 85%, rgba(0,236,255,1) 100%);
+    height: 100%;
+    border-radius: inherit;
+    box-shadow: 0 0 0 1px inset #222122b8;
+    transition: all .3s ease;
+}
+
+
 /* -------------- Responsive -------------- */
 @media screen and (min-width: 768px) {
+    #loading {
+        padding: 12rem 24px 3rem;
+    }
+
+    #loading .container {
+        max-width: 400px;
+    }
+
+    #loading .block-loading-barra .textCopy {
+        max-width: 100%;
+        margin-top: 6rem;
+        line-height: normal;
+    }
+
     .container {
         padding: 0 40px;
     }
@@ -749,37 +849,8 @@ body {
         display: none !important;
     }
 
-    .header .ham-burger {
-        display: none;
-    }
-
-    .header .container {
-        height: 80px;
-    }
-
-    .header__logo {
-        font-size: 48px;
-        line-height: 52.8px;
-    }
-
-    .header__navigation {
-        display: block;
-    }
-
-    .header__nav--title {
-        display: none;
-    }
-
     .header.menu .header__nav {
-        padding: 24px 40px;
-    }
-
-    .header.menu .header__navigation {
-        padding-top: 80px;
-    }
-
-    .header.menu .hide-for-mobile {
-        display: none !important;
+        padding: 24px 40px 40px;
     }
 
     .hero__content,
@@ -913,5 +984,44 @@ body {
         width: 566px;
         height: 460px;
         border-radius: 62px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .header .ham-burger {
+        display: none;
+    }
+
+    .header .container {
+        height: 80px;
+    }
+
+    .header__button {
+        display: block;
+    }
+
+    .header__logo {
+        font-size: 48px;
+        line-height: 52.8px;
+    }
+
+    .header__navigation {
+        display: block;
+    }
+
+    .header__nav--title {
+        display: none;
+    }
+
+    .header.menu .header__navigation {
+        padding-top: 80px;
+    }
+
+    .header.menu .hide-for-mobile {
+        display: none !important;
+    }
+
+    .header__nav--link.active::before {
+        display: block;
     }
 }
