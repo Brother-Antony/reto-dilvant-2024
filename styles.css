@@ -213,7 +213,8 @@ body {
     width: 26px;
 }
 
-.header__nav--title {
+.header__nav--title,
+.header__nav--description {
     display: none;
 }
 
@@ -1229,7 +1230,8 @@ body {
         padding: 12px 24px 40px;
     }
 
-    .header.menu .header__nav--title {
+    .header.menu .header__nav--title,
+    .header.menu .header__nav--description {
         display: block;
     }
     
